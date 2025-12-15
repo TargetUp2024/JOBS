@@ -126,7 +126,7 @@ for country in countries:
         empty_page_count = 0 
         
         # Max 50 pages per country/keyword to keep runtime reasonable for GitHub Actions
-        for page in range(0, 50): 
+        for page in range(0, 2): 
             if empty_page_count > 2:
                 break
 
