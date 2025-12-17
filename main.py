@@ -15,8 +15,21 @@ import os
 # Using today for filename clarity in automation
 current_date = datetime.now()
 date_str = current_date.strftime('%Y-%m-%d')
+month_str = current_date.strftime('%B')  # Full month name, e.g., "December"
 
-countries = ["Sub-Saharan Africa", "Northern Africa", "Eastern Africa", "Western Africa", "Southern Africa"]
+
+countries = [
+    "Algeria", "Egypt", "Libya", "Morocco", "Sudan", "Tunisia",
+    "Benin", "Burkina Faso", "Cape Verde", "Côte d’Ivoire", "Gambia", "Ghana",
+    "Guinea", "Guinea-Bissau", "Liberia", "Mali", "Mauritania", "Niger",
+    "Nigeria", "Senegal", "Sierra Leone", "Togo",
+    "Angola", "Cameroon", "Central African Republic", "Chad", "Congo (Brazzaville)",
+    "Democratic Republic of the Congo", "Equatorial Guinea", "Gabon", "São Tomé and Príncipe",
+    "Burundi", "Comoros", "Djibouti", "Eritrea", "Ethiopia", "Kenya", "Madagascar",
+    "Malawi", "Mauritius", "Mozambique", "Rwanda", "Seychelles", "Somalia",
+    "Tanzania", "Uganda", "Zambia", "Zimbabwe",
+    "Botswana", "Lesotho", "Namibia", "South Africa", "Eswatini"
+]
 excluded_countries = ["Spain"] 
 
 # General search (no specific keywords)
@@ -126,7 +139,7 @@ for country in countries:
         empty_page_count = 0 
         
         # Max 50 pages per country/keyword to keep runtime reasonable for GitHub Actions
-        for page in range(0, 500): 
+        for page in range(0, 100): 
             if empty_page_count > 2:
                 break
 
@@ -239,6 +252,7 @@ for i, (api_url, searched_keyword, original_link) in enumerate(api_links):
 
         data.append({
             "Date": date_str,
+            "Month": month_str,  # <-- NEW COLUMN
             "Title": title,
             "Company": company,
             "Location": location,
