@@ -70,9 +70,9 @@ def extract_education(description):
     education_map = {
         "Bac+8 / Doctorat": ["bac+8", "doctorat", "phd", "doctorate", "dba"],
         "Bac+5 / Master / Ingénieur": ["bac+5", "master", "msc", "mba", "ingénieur", "ingenieur", "engineer", "dea", "dess"],
-        "Bac+4": ["bac+4", "maîtrise", "m1"],
-        "Bac+3 / Licence": ["bac+3", "licence", "bachelor", "license", "graduate"],
-        "Bac+2 / BTS / DUT": ["bac+2", "bts", "dut", "deug", "technicien supérieur", "associate degree"],
+        "Bac+4": ["bac+4", "m1","bachelor"],
+        "Bac+3 / Licence": ["bac+3", "licence", "license", "graduate"],
+        "Bac+2 / BTS / DUT": ["bac+2", "bts", "dut", "deug", "téchnicien", "associate",'technicien'],
         "Bac": ["bac", "niveau bac", "baccalauréat", "high school diploma"],
         "Certified": ["certified", "certification", "certificat", "certifiée", "certifié"]
     }
